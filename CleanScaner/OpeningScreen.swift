@@ -8,8 +8,7 @@ import AuthenticationServices
 import SwiftUI
 
 struct OpeningScreen: View {
-    
-    @State private var login:Bool = false
+    @State private var loginPushed = false
     
     var body: some View {
         VStack() {
@@ -24,11 +23,14 @@ struct OpeningScreen: View {
                 Spacer()
                 
                 Button("LOGIN") {
-                    
+                    loginPushed.toggle()
+                }
+                .foregroundColor(Color.black)
+                
+                if loginPushed {
+                   LoginScreen()
                 }
                     //TODO: Create login ui for button
-                
-                .foregroundColor(Color.black)
                 
                 Spacer()
                 
