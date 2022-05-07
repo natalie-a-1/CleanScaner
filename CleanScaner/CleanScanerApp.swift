@@ -11,7 +11,7 @@ import SwiftUI
 struct CleanScanerApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginScreen()
+            OpeningScreen()
         }
     }
 }
