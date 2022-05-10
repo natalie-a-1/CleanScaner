@@ -9,16 +9,17 @@ import SwiftUI
 
 struct OpeningScreen: View {
     @State private var loginPushed = false
+    @State private var registerPushed = false
     
     var body: some View {
         VStack() {
-            //CleanScanner title
+            
             Spacer()
             Text("C L E A N  S C A N N E R")
             .frame(alignment: .center)
             .font(.largeTitle)
             .padding()
-            //login and register buttons
+            
             HStack() {
                 Spacer()
                 
@@ -30,14 +31,18 @@ struct OpeningScreen: View {
                 if loginPushed {
                    LoginScreen()
                 }
-                    //TODO: Create login ui for button
                 
                 Spacer()
                 
                 Button("REGISTER") {
+                    registerPushed.toggle()
                     //TODO: Create register ui for button
                 }
                 .foregroundColor(Color.black)
+                
+                if registerPushed {
+                    RegisterScreen()
+                }
                 
                 Spacer()
             }
